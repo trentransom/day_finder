@@ -66,7 +66,9 @@ def dayfinder(date):
     daydate = (daydate + (year//4))
     daydate = (daydate - (year//100))
     daydate = (daydate + (year//400))
-    if year%4 == 0 and month <= 2:
+    if year%4 == 0 and year%100 != 0 and month <= 2:
+        daydate -= 1
+    if year%400 == 0 and month <=2:
         daydate -= 1
 
 
